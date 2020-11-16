@@ -21,6 +21,15 @@ setTimeout(calculatedResult,2000);
     e.preventDefault();
 });
 
+//event when clear button is fired
+form.addEventListener('reset', function(e){
+//hide results
+document.querySelector('#result').style.display='none';
+//hide the loading GIF
+document.querySelector('#loading').style.display ='none';
+    e.preventDefault
+})
+
 //defining calculatedResult function
 function calculatedResult(){
     //defining the formula's parameters
