@@ -13,7 +13,11 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
+    <style>
+      #loading, #result{
+        display: none;
+      }
+    </style>
     <title>Loan Calculator</title>
   </head>
   <body class="bg-info">
@@ -33,7 +37,7 @@
                     class="form-control"
                     id="ammount"
                     placeholder="Loan ammount"
-                    step=".01"
+                    step=".001"
                   />
                 </div>
               </div>
@@ -47,7 +51,7 @@
                     class="form-control"
                     id="interest"
                     placeholder="Interest rate"
-                    step=".01"
+                    step=".001"
                   />
                 </div>
               </div>
@@ -57,7 +61,7 @@
                     class="form-control"
                     id="years"
                     placeholder="Repayment years"
-                    step=".01"
+                    step=".001"
                   />
                 </div>
               <div class="form-group">
@@ -69,9 +73,9 @@
                 </div>
               
             </form>
-            <!-- <div id="loading">
+            <div id="loading">
                 <img src="/img/loading.gif" alt="">
-            </div> -->
+            </div>
 
             <div id="result">
                 <h5>Plan</h5>

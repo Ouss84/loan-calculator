@@ -8,10 +8,21 @@ const totalPayment = document.querySelector('#total-payment');
 const totalInterest = document.querySelector('#total-interest');
 
 //events when the submit button is fired
-form.addEventListener('submit', calculatedResult);
+form.addEventListener('submit', function(e){
+//hide results
+document.querySelector('#result').style.display='none';
+//show the loading GIF
+document.querySelector('#loading').style.display ='block';
+
+//delay the result display
+
+setTimeout(calculatedResult,2000);
+
+    e.preventDefault();
+});
 
 //defining calculatedResult function
-function calculatedResult(e){
+function calculatedResult(){
     //defining the formula's parameters
     const principal = parseFloat(ammount.value);
     const calculatedInterest = parseFloat(interest.value) /100 /12;
@@ -22,10 +33,14 @@ function calculatedResult(e){
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
+        //display results
+        document.querySelector('#result').style.display='block';
+       //hide the loading GIF
+       document.querySelector('#loading').style.display ='none';
     } else{
         errorMessage('Pleasa check your inputs!');
     }
-    e.preventDefault();
+     
 }
 
 //setting the error message function
@@ -39,6 +54,7 @@ function errorMessage (error){
 
     //setting time out
     setTimeout (removeErrorMessage, 3000);
+    document.querySelector('#loading').style.display ='none';
 
 }
 
