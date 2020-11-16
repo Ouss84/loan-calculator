@@ -21,7 +21,7 @@ setTimeout(calculatedResult,2000);
     e.preventDefault();
 });
 
-//event when clear button is fired
+//event when the reset button is fired
 form.addEventListener('reset', function(e){
 //hide results
 document.querySelector('#result').style.display='none';
